@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+const RPM_URL = "http://localhost:3001"
 
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: "/rpm",
+        destination: `${RPM_URL}/`,
+      },
+    ];
+  },
 };
-
-export default nextConfig;
